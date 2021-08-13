@@ -30,7 +30,7 @@ class StudentRecordViewset(viewsets.ModelViewSet):
         # for i in data:
         #     print(i.enrollment__count)
 
-        return data
+        #return data
 
 
 class CustomerRecordViewset(viewsets.ModelViewSet):
