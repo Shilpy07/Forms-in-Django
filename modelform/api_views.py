@@ -12,7 +12,7 @@ class StudentRecordViewset(viewsets.ModelViewSet):
     extra_kwargs = {'url': {'lookup_field': 'name'}}
 
     def get_queryset(self):
-        # data = self.filter_queryset(StudentRecord.objects
+        data = self.filter_queryset(StudentRecord.objects
         #                             .filter(id=2)
         #                             .values_list('id', 'name'))
         #   data = self.filter_queryset(StudentRecord.objects.values_list('name', 'enrollment', 'address__name', 'address__items', 'address__items__name'))
@@ -30,7 +30,7 @@ class StudentRecordViewset(viewsets.ModelViewSet):
         # for i in data:
         #     print(i.enrollment__count)
 
-        #return data
+        return data
 
 
 class CustomerRecordViewset(viewsets.ModelViewSet):
