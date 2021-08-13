@@ -11,19 +11,19 @@ class StudentRecordViewset(viewsets.ModelViewSet):
     filterset_fields = ('name',)
     extra_kwargs = {'url': {'lookup_field': 'name'}}
 
-    #def get_queryset(self):
+    def get_queryset(self):
         #data = self.filter_queryset(StudentRecord.objects
         #                             .filter(id=2)
         #                             .values_list('id', 'name'))
         #   data = self.filter_queryset(StudentRecord.objects.values_list('name', 'enrollment', 'address__name', 'address__items', 'address__items__name'))
         # data = self.filter_queryset(StudentRecord.objects.all())
-        # data = StudentRecord.objects.select_related('address').all()
-        # students = []
-        #
-        # for student in data:
-        #     students.append({'enrollment': student.enrollment, 'name': student.name, 'address': student.address.name})
-        #
-        # return students
+        data = StudentRecord.objects.select_related('address').all()
+        students = []
+
+        for student in data:
+            students.append({'enrollment': student.enrollment, 'name': student.name, 'address': student.address.name})
+
+        return students
         # for i in data:
         #print(students)
         # data = self.filter_queryset(StudentRecord.objects.annotate(Count('enrollment')))
