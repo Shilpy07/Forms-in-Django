@@ -11,7 +11,7 @@ class StudentRecordViewset(viewsets.ModelViewSet):
     filterset_fields = ('name',)
     extra_kwargs = {'url': {'lookup_field': 'name'}}
 
-    def get_queryset(self):
+   # def get_queryset(self):
         # data = self.filter_queryset(StudentRecord.objects
         #                             .filter(id=2)
         #                             .values_list('id', 'name'))
